@@ -1,0 +1,9 @@
+# APIキー（絶対にGitに含めない）
+.env
+
+# Node.js
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
