@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liebe | Hair Salon 大阪・高槻</title>
+  <meta name="description" content="大阪高槻のヘアサロン Liebe。カット・カラー・パーマ・トリートメント・アイブロウ。あなたの美しさを、もっと自由に。" />
+
+  <!-- Google Fonts（display=swapで非同期読み込み） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet" /></noscript>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ========================================
+       ヘッダー / ナビゲーション
+  ======================================== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <!-- ロゴ -->
+      <a href="#top" class="header__logo">
+        <span class="logo-text">Liebe</span>
+        <span class="logo-sub">Hair Salon</span>
+      </a>
+
+      <!-- ナビゲーション（PC） -->
+      <nav class="header__nav" id="nav">
+        <ul class="nav__list">
+          <li><a href="#about" class="nav__link">About</a></li>
+          <li><a href="#menu" class="nav__link">Menu</a></li>
+          <li><a href="#price" class="nav__link">Price</a></li>
+          <li><a href="#staff" class="nav__link">Staff</a></li>
+          <li><a href="#availability" class="nav__link">空き状況</a></li>
+          <li><a href="#reviews" class="nav__link">口コミ</a></li>
+          <li><a href="#contact" class="nav__link nav__link--cta">ご予約</a></li>
+        </ul>
+      </nav>
+
+      <!-- ハンバーガーメニュー（モバイル） -->
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- モバイルナビオーバーレイ -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="mobile-nav__list">
+      <li><a href="#about" class="mobile-nav__link">About</a></li>
+      <li><a href="#menu" class="mobile-nav__link">Menu</a></li>
+      <li><a href="#price" class="mobile-nav__link">Price</a></li>
+      <li><a href="#staff" class="mobile-nav__link">Staff</a></li>
+      <li><a href="#availability" class="mobile-nav__link">空き状況</a></li>
+      <li><a href="#reviews" class="mobile-nav__link">口コミ</a></li>
+      <li><a href="#contact" class="mobile-nav__link mobile-nav__link--cta">ご予約</a></li>
+    </ul>
+  </div>
+
+  <main id="top">
+
+    <!-- ========================================
+         Hero セクション
+    ======================================== -->
+    <section class="hero">
+      <!-- 背景写真（実際の運用時はここに画像を差し替え） -->
+      <div class="hero__bg-photo"></div>
+      <!-- 暗めのオーバーレイ -->
+      <div class="hero__overlay"></div>
+
+      <div class="hero__content">
+        <h1 class="hero__title fade-in delay-1">
+          あなたの美しさを、<br />もっと自由に。
+        </h1>
+        <div class="hero__actions fade-in delay-2">
+          <a href="#contact" class="btn btn--primary">ご予約はこちら</a>
+          <a href="#menu" class="btn btn--outline">メニューを見る</a>
+        </div>
+      </div>
+
+      <!-- スクロール誘導 -->
+      <div class="hero__scroll">
+        <span>Scroll</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         About セクション
+    ======================================== -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="about__grid">
+          <!-- テキスト -->
+          <div class="about__text reveal">
+            <p class="section__eyebrow">About Liebe</p>
+            <h2 class="section__title">美しさと、<br />自分らしさと。</h2>
+            <p class="about__body">Liebeはドイツ語で「愛」を意味します。大阪・高槻に根ざした私たちは、お客様一人ひとりの個性と向き合い、その方だけのスタイルをご提案します。</p>
+            <p class="about__body">技術と感性を磨き続けるスタイリストが、カット・カラー・パーマ・トリートメントなど幅広いメニューであなたの「なりたい」を叶えます。</p>
+            <!-- 特徴バッジ -->
+            <ul class="about__badges">
+              <li class="badge">丁寧なカウンセリング</li>
+              <li class="badge">髪質改善トリートメント</li>
+              <li class="badge">完全個室対応</li>
+            </ul>
+          </div>
+
+          <!-- 画像ブロック -->
+          <div class="about__image reveal delay-1">
+            <div class="about__img-frame">
+              <!-- サロンのイメージ（実際の写真を差し替えてください） -->
+              <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=600&q=80&auto=format&fit=crop" alt="Liebeサロン内観" loading="lazy" />
+            </div>
+            <!-- 装飾ボックス -->
+            <div class="about__img-deco"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         Menu セクション
+    ======================================== -->
+    <section class="section menu" id="menu">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="section__eyebrow">Our Services</p>
+          <h2 class="section__title">メニュー</h2>
+          <p class="section__desc">美しさを引き出すために、最高の技術とケアをご提供します。</p>
+        </div>
+
+        <div class="menu__grid">
+          <!-- カット -->
+          <div class="menu__card reveal">
+            <div class="menu__photo">
+              <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80&auto=format&fit=crop" alt="カット" loading="lazy" />
+            </div>
+            <div class="menu__overlay">
+              <h3 class="menu__name">カット</h3>
+              <p class="menu__desc">骨格・髪質に合わせた丁寧なカウンセリングで、理想のスタイルへ。</p>
+            </div>
+          </div>
+
+          <!-- カラー -->
+          <div class="menu__card reveal delay-1">
+            <div class="menu__photo">
+              <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=600&q=80&auto=format&fit=crop" alt="カラー" loading="lazy" />
+            </div>
+            <div class="menu__overlay">
+              <h3 class="menu__name">カラー</h3>
+              <p class="menu__desc">トレンドカラーから白髪染めまで。髪への負担を最小限に抑えた施術。</p>
+            </div>
+          </div>
+
+          <!-- パーマ・縮毛矯正 -->
+          <div class="menu__card reveal delay-2">
+            <div class="menu__photo">
+              <img src="https://images.unsplash.com/photo-1519735777090-ec97162dc266?w=600&q=80&auto=format&fit=crop" alt="パーマ・縮毛矯正" loading="lazy" />
+            </div>
+            <div class="menu__overlay">
+              <h3 class="menu__name">パーマ・縮毛矯正</h3>
+              <p class="menu__desc">ふんわりカールから完璧なストレートまで。持続力と髪のツヤにこだわった施術。</p>
+            </div>
+          </div>
+
+          <!-- トリートメント・ヘッドスパ -->
+          <div class="menu__card reveal delay-3">
+            <div class="menu__photo">
+              <img src="https://images.unsplash.com/photo-1559599101-f09722fb4948?w=600&q=80&auto=format&fit=crop" alt="トリートメント・ヘッドスパ" loading="lazy" />
+            </div>
+            <div class="menu__overlay">
+              <h3 class="menu__name">トリートメント・ヘッドスパ</h3>
+              <p class="menu__desc">傷んだ髪を内側から修復。頭皮ケアで健康的な美髪をサポートします。</p>
+            </div>
+          </div>
+
+          <!-- アイブロウ -->
+          <div class="menu__card reveal delay-1">
+            <div class="menu__photo">
+              <img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?w=600&q=80&auto=format&fit=crop" alt="アイブロウ" loading="lazy" />
+            </div>
+            <div class="menu__overlay">
+              <h3 class="menu__name">アイブロウ</h3>
+              <p class="menu__desc">眉の形・濃さを整え、顔全体の印象を格上げ。ナチュラルからはっきりまで対応。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         料金表セクション
+    ======================================== -->
+    <section class="section price" id="price">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="section__eyebrow">Price List</p>
+          <h2 class="section__title">料金表</h2>
+          <p class="section__desc">すべて税込み価格です。髪の長さ・状態により価格が変わる場合がございます。</p>
+        </div>
+
+        <div class="price__tables reveal">
+          <!-- カット -->
+          <div class="price__table">
+            <h3 class="price__category">Cut</h3>
+            <table>
+              <tbody>
+                <tr>
+                  <td>カット（ショート〜ミディアム）</td>
+                  <td class="price__amount">¥4,400</td>
+                </tr>
+                <tr>
+                  <td>カット（セミロング〜ロング）</td>
+                  <td class="price__amount">¥5,500</td>
+                </tr>
+                <tr>
+                  <td>前髪カット</td>
+                  <td class="price__amount">¥1,100</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- カラー -->
+          <div class="price__table">
+            <h3 class="price__category">Color</h3>
+            <table>
+              <tbody>
+                <tr>
+                  <td>ワンカラー（ショート〜ミディアム）</td>
+                  <td class="price__amount">¥6,600</td>
+                </tr>
+                <tr>
+                  <td>ワンカラー（セミロング〜ロング）</td>
+                  <td class="price__amount">¥8,800</td>
+                </tr>
+                <tr>
+                  <td>グレイカラー（白髪染め）</td>
+                  <td class="price__amount">¥7,700〜</td>
+                </tr>
+                <tr>
+                  <td>ハイライト・バレイヤージュ</td>
+                  <td class="price__amount">¥11,000〜</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- パーマ・縮毛矯正 -->
+          <div class="price__table">
+            <h3 class="price__category">Perm & Straight</h3>
+            <table>
+              <tbody>
+                <tr>
+                  <td>デジタルパーマ（ショート〜ミディアム）</td>
+                  <td class="price__amount">¥13,200〜</td>
+                </tr>
+                <tr>
+                  <td>デジタルパーマ（ロング）</td>
+                  <td class="price__amount">¥17,600〜</td>
+                </tr>
+                <tr>
+                  <td>縮毛矯正</td>
+                  <td class="price__amount">¥16,500〜</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- トリートメント・ヘッドスパ -->
+          <div class="price__table">
+            <h3 class="price__category">Treatment & Head Spa</h3>
+            <table>
+              <tbody>
+                <tr>
+                  <td>トリートメント（ショート〜ミディアム）</td>
+                  <td class="price__amount">¥3,300〜</td>
+                </tr>
+                <tr>
+                  <td>トリートメント（ロング）</td>
+                  <td class="price__amount">¥4,400〜</td>
+                </tr>
+                <tr>
+                  <td>ヘッドスパ（30分）</td>
+                  <td class="price__amount">¥5,500</td>
+                </tr>
+                <tr>
+                  <td>ヘッドスパ（60分）</td>
+                  <td class="price__amount">¥9,900</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- アイブロウ -->
+          <div class="price__table">
+            <h3 class="price__category">Eyebrow</h3>
+            <table>
+              <tbody>
+                <tr>
+                  <td>眉カット・シェービング</td>
+                  <td class="price__amount">¥2,200</td>
+                </tr>
+                <tr>
+                  <td>眉カラー</td>
+                  <td class="price__amount">¥3,300</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <p class="price__note reveal">
+          ※ 上記は目安価格です。カウンセリングにて正確なお見積もりをご案内します。<br />
+          ※ セットメニューやキャンペーン価格については、スタッフまでお気軽にお問い合わせください。
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================
+         Staff セクション
+    ======================================== -->
+    <section class="section staff" id="staff">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="section__eyebrow">Our Team</p>
+          <h2 class="section__title">スタッフ紹介</h2>
+        </div>
+
+        <div class="staff__grid">
+          <!-- スタッフ 1 -->
+          <div class="staff__card reveal">
+            <div class="staff__photo">
+              <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=400&q=80&auto=format&fit=crop" alt="山田 花子" loading="lazy" />
+            </div>
+            <div class="staff__info">
+              <p class="staff__role">Head Stylist</p>
+              <h3 class="staff__name">山田 花子</h3>
+              <p class="staff__comment">お客様の「なりたい」を形にするのが私の喜びです。骨格診断を得意とし、一人ひとりに似合うスタイルをご提案します。</p>
+              <p class="staff__specialty">得意メニュー：カット / バレイヤージュ</p>
+            </div>
+          </div>
+
+          <!-- スタッフ 2 -->
+          <div class="staff__card reveal delay-1">
+            <div class="staff__photo">
+              <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=400&q=80&auto=format&fit=crop" alt="田中 美咲" loading="lazy" />
+            </div>
+            <div class="staff__info">
+              <p class="staff__role">Color Specialist</p>
+              <h3 class="staff__name">田中 美咲</h3>
+              <p class="staff__comment">カラーリングの繊細な色合いを大切にしています。髪のダメージを最小限に、鮮やかな発色を実現します。</p>
+              <p class="staff__specialty">得意メニュー：カラー / トリートメント</p>
+            </div>
+          </div>
+
+          <!-- スタッフ 3 -->
+          <div class="staff__card reveal delay-2">
+            <div class="staff__photo">
+              <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=400&q=80&auto=format&fit=crop" alt="鈴木 涼太" loading="lazy" />
+            </div>
+            <div class="staff__info">
+              <p class="staff__role">Perm Specialist</p>
+              <h3 class="staff__name">鈴木 涼太</h3>
+              <p class="staff__comment">縮毛矯正とデジタルパーマを専門にしています。扱いやすくツヤのある仕上がりが得意です。</p>
+              <p class="staff__specialty">得意メニュー：縮毛矯正 / ヘッドスパ</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         予約空き状況セクション
+    ======================================== -->
+    <section class="section availability" id="availability">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="section__eyebrow">Availability</p>
+          <h2 class="section__title">予約空き状況</h2>
+          <p class="section__desc">直近1週間の空き状況をご確認いただけます。</p>
+        </div>
+
+        <!-- 凡例 -->
+        <div class="availability__legend reveal">
+          <span class="legend legend--open">◯ 空きあり</span>
+          <span class="legend legend--few">△ 残りわずか</span>
+          <span class="legend legend--full">× 満席</span>
+        </div>
+
+        <!-- カレンダーテーブル -->
+        <div class="availability__wrapper reveal">
+          <div class="availability__scroll">
+            <table class="availability__table" id="availabilityTable">
+              <thead>
+                <tr>
+                  <th class="time-col">時間</th>
+                  <!-- 曜日はJavaScriptで動的生成 -->
+                </tr>
+              </thead>
+              <tbody>
+                <!-- 時間帯はJavaScriptで動的生成 -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="availability__cta reveal">
+          <p>ご希望の日時をお選びのうえ、下のフォームからご予約ください。</p>
+          <a href="#contact" class="btn btn--primary">予約フォームへ</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         口コミセクション
+    ======================================== -->
+    <section class="section reviews" id="reviews">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="section__eyebrow">Reviews</p>
+          <h2 class="section__title">お客様の声</h2>
+          <!-- 総合評価 -->
+          <div class="reviews__overall reveal">
+            <span class="reviews__score">4.9</span>
+            <div class="reviews__stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star star--half">★</span>
+            </div>
+            <span class="reviews__count">（32件の口コミ）</span>
+          </div>
+        </div>
+
+        <!-- スライダー -->
+        <div class="reviews__slider-wrapper reveal">
+          <div class="reviews__slider" id="reviewsSlider">
+
+            <!-- 口コミ 1 -->
+            <div class="review__card">
+              <div class="review__header">
+                <div class="review__avatar">Y</div>
+                <div>
+                  <p class="review__author">Yuki S.</p>
+                  <div class="review__stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="review__text">
+                初めて伺いましたが、カウンセリングがとても丁寧で安心しました。
+                仕上がりも大満足！ずっと悩んでいた髪のうねりも、縮毛矯正でサラサラになりました。
+                また必ず来ます！
+              </p>
+              <p class="review__date">2024年11月</p>
+            </div>
+
+            <!-- 口コミ 2 -->
+            <div class="review__card">
+              <div class="review__header">
+                <div class="review__avatar">M</div>
+                <div>
+                  <p class="review__author">Mana T.</p>
+                  <div class="review__stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="review__text">
+                カラーとトリートメントをお願いしました。発色がとても綺麗で、
+                しかも髪が傷んでいない！田中さんのカラーはリピ確定です。
+                サロン全体の雰囲気も落ち着いていて居心地が良かったです。
+              </p>
+              <p class="review__date">2024年10月</p>
+            </div>
+
+            <!-- 口コミ 3 -->
+            <div class="review__card">
+              <div class="review__header">
+                <div class="review__avatar">K</div>
+                <div>
+                  <p class="review__author">Kenji A.</p>
+                  <div class="review__stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="review__text">
+                ヘッドスパが最高でした。日ごろの疲れが一気に取れた感じ。
+                鈴木さんの手技がとても気持ちよく、気づいたら寝てしまっていました（笑）。
+                髪もツヤツヤになって大満足です。
+              </p>
+              <p class="review__date">2024年10月</p>
+            </div>
+
+            <!-- 口コミ 4 -->
+            <div class="review__card">
+              <div class="review__header">
+                <div class="review__avatar">R</div>
+                <div>
+                  <p class="review__author">Riko N.</p>
+                  <div class="review__stars">★★★★☆</div>
+                </div>
+              </div>
+              <p class="review__text">
+                バレイヤージュカラーをお願いしました。自然なグラデーションが
+                とても素敵に仕上がりました。次回はアイブロウも試してみたいと思います。
+              </p>
+              <p class="review__date">2024年9月</p>
+            </div>
+
+            <!-- 口コミ 5 -->
+            <div class="review__card">
+              <div class="review__header">
+                <div class="review__avatar">H</div>
+                <div>
+                  <p class="review__author">Hana O.</p>
+                  <div class="review__stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="review__text">
+                眉スタイリングを初めてお願いしました。山田さんがとても丁寧に
+                アドバイスしてくださり、顔全体の印象がガラッと変わりました。
+                毎月通いたいと思います！
+              </p>
+              <p class="review__date">2024年9月</p>
+            </div>
+
+          </div>
+
+          <!-- スライダーコントロール -->
+          <button class="slider__btn slider__btn--prev" id="sliderPrev" aria-label="前へ">&#8592;</button>
+          <button class="slider__btn slider__btn--next" id="sliderNext" aria-label="次へ">&#8594;</button>
+        </div>
+
+        <!-- スライダードット -->
+        <div class="reviews__dots" id="reviewsDots"></div>
+
+        <div class="reviews__google reveal">
+          <a href="#" class="btn btn--outline btn--google">
+            <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="#4285F4"/>
+              <path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332C2.438 15.983 5.482 18 9 18z" fill="#34A853"/>
+              <path d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" fill="#FBBC05"/>
+              <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0 5.482 0 2.438 2.017.957 4.958L3.964 6.29C4.672 4.163 6.656 3.58 9 3.58z" fill="#EA4335"/>
+            </svg>
+            Googleで口コミをすべて見る
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         Contact / 予約フォームセクション
+    ======================================== -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="section__eyebrow">Reservation & Contact</p>
+          <h2 class="section__title">ご予約・お問い合わせ</h2>
+          <p class="section__desc">ご予約はフォームのほか、お電話でも承っております。</p>
+        </div>
+
+        <div class="contact__grid">
+          <!-- フォーム -->
+          <form class="contact__form reveal" id="contactForm" novalidate>
+            <div class="form__group">
+              <label for="name" class="form__label">お名前 <span class="required">*</span></label>
+              <input type="text" id="name" name="name" class="form__input" placeholder="例：山田 花子" required />
+              <span class="form__error" id="nameError"></span>
+            </div>
+
+            <div class="form__group">
+              <label for="phone" class="form__label">電話番号 <span class="required">*</span></label>
+              <input type="tel" id="phone" name="phone" class="form__input" placeholder="例：090-1234-5678" required />
+              <span class="form__error" id="phoneError"></span>
+            </div>
+
+            <div class="form__group">
+              <label for="date" class="form__label">希望日時 <span class="required">*</span></label>
+              <input type="datetime-local" id="date" name="date" class="form__input" required />
+              <span class="form__error" id="dateError"></span>
+            </div>
+
+            <div class="form__group">
+              <label for="menuSelect" class="form__label">ご希望のメニュー</label>
+              <select id="menuSelect" name="menu" class="form__input form__select">
+                <option value="">選択してください</option>
+                <option value="cut">カット</option>
+                <option value="color">カラー</option>
+                <option value="perm">パーマ</option>
+                <option value="straight">縮毛矯正</option>
+                <option value="treatment">トリートメント</option>
+                <option value="headspa">ヘッドスパ</option>
+                <option value="eyebrow">アイブロウ</option>
+                <option value="set">セットメニュー</option>
+              </select>
+            </div>
+
+            <div class="form__group">
+              <label for="message" class="form__label">ご要望・メッセージ</label>
+              <textarea id="message" name="message" class="form__input form__textarea" placeholder="髪のお悩みやご要望などをご自由にお書きください。"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full">送信する</button>
+          </form>
+
+          <!-- サロン情報 -->
+          <div class="contact__info reveal delay-1">
+            <div class="info__block">
+              <h3 class="info__title">Liebe Hair Salon</h3>
+
+              <div class="info__item">
+                <span class="info__icon">📍</span>
+                <div>
+                  <p class="info__label">住所</p>
+                  <p class="info__text">〒569-0000<br />大阪府高槻市○○町1-2-3</p>
+                </div>
+              </div>
+
+              <div class="info__item">
+                <span class="info__icon">📞</span>
+                <div>
+                  <p class="info__label">電話番号</p>
+                  <p class="info__text"><a href="tel:072-000-0000">072-000-0000</a></p>
+                </div>
+              </div>
+
+              <div class="info__item">
+                <span class="info__icon">🕐</span>
+                <div>
+                  <p class="info__label">営業時間</p>
+                  <p class="info__text">火〜土：10:00〜20:00<br />日・祝：10:00〜18:00<br />定休日：月曜日</p>
+                </div>
+              </div>
+
+              <div class="info__item">
+                <span class="info__icon">🚃</span>
+                <div>
+                  <p class="info__label">アクセス</p>
+                  <p class="info__text">JR高槻駅 徒歩5分<br />阪急高槻市駅 徒歩7分</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- SNSリンク -->
+            <div class="info__sns">
+              <a href="#" class="sns__link sns__link--instagram" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+              <a href="#" class="sns__link sns__link--line" aria-label="LINE">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.070 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================
+       フッター
+  ======================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <span class="footer__logo">Liebe</span>
+          <p class="footer__tagline">あなたの美しさを、もっと自由に。</p>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2024 Liebe Hair Salon. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================
+       チャットボット
+  ======================================== -->
+  <!-- チャット起動ボタン（右下FAB） -->
+  <button class="chat-fab" id="chatFab" aria-label="チャットで相談する">
+    <svg class="chat-fab__icon chat-fab__icon--open" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2Z" fill="currentColor"/>
+    </svg>
+    <svg class="chat-fab__icon chat-fab__icon--close" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+  </button>
+
+  <!-- チャットウィンドウ -->
+  <div class="chat-window" id="chatWindow" aria-hidden="true">
+    <div class="chat-window__header">
+      <div class="chat-window__avatar">L</div>
+      <div>
+        <p class="chat-window__name">Liebeチャット</p>
+        <p class="chat-window__status">ご予約・ご案内</p>
+      </div>
+    </div>
+
+    <div class="chat-window__body" id="chatBody">
+      <!-- メッセージはJSで挿入 -->
+    </div>
+
+    <div class="chat-window__footer">
+      <!-- クイックリプライ -->
+      <div class="chat-quick" id="chatQuick"></div>
+      <div class="chat-input-row">
+        <input type="text" class="chat-input" id="chatInput" placeholder="メッセージを入力..." />
+        <button class="chat-send" id="chatSend" aria-label="送信">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>
