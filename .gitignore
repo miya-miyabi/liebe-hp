@@ -7,3 +7,9 @@ node_modules/
 # OS
 .DS_Store
 Thumbs.db
+
+# Claude Code 内部ファイル
+.claude/
+
+# デバッグログ
+*.log

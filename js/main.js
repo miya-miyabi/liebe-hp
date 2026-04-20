@@ -300,7 +300,52 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 })();
 
 /* =========================================
-   7. 予約フォーム バリデーション
+   7. スタッフ横スクロールスライダー
+========================================= */
+(function initStaffSlider() {
+  const slider   = document.getElementById('staffSlider');
+  const prevBtn  = document.getElementById('staffPrev');
+  const nextBtn  = document.getElementById('staffNext');
+  const dotsWrap = document.getElementById('staffDots');
+
+  if (!slider) return;
+
+  const cards    = slider.querySelectorAll('.staff__card');
+  const dots     = dotsWrap ? dotsWrap.querySelectorAll('.staff__dot') : [];
+  const total    = cards.length;
+  let current    = 0;
+
+  function getCardWidth() {
+    return cards[0] ? cards[0].offsetWidth + 24 : 0; // card幅 + gap
+  }
+
+  function goTo(index) {
+    current = Math.max(0, Math.min(total - 1, index));
+    slider.scrollTo({ left: getCardWidth() * current, behavior: 'smooth' });
+    dots.forEach((d, i) => d.classList.toggle('staff__dot--active', i === current));
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  // ドットクリック
+  dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+
+  // スクロールでドット連動
+  slider.addEventListener('scroll', () => {
+    const w = getCardWidth();
+    if (w > 0) {
+      const idx = Math.round(slider.scrollLeft / w);
+      if (idx !== current) {
+        current = idx;
+        dots.forEach((d, i) => d.classList.toggle('staff__dot--active', i === current));
+      }
+    }
+  }, { passive: true });
+})();
+
+/* =========================================
+   8. 予約フォーム バリデーション
 ========================================= */
 (function initForm() {
   const form = document.getElementById('contactForm');

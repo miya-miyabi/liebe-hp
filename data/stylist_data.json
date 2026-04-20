@@ -1,0 +1,64 @@
+{
+  "stylists": [
+    {
+      "name": "近藤 なつみ",
+      "gender": "女性",
+      "role": "Top stylist",
+      "experience": "歴7年",
+      "strength": "縮毛矯正得意です",
+      "instagram": "@liebe_knd_ntm_",
+      "reservation_url": "https://beauty.hotpepper.jp/slnH000751219/stylist/T001053560/"
+    },
+    {
+      "name": "鉄矢 絢子",
+      "gender": "女性",
+      "role": "Head stylist",
+      "experience": "歴8年",
+      "strength": "何でもお悩みお伝え下さい",
+      "instagram": "@liebe_tetsuaya",
+      "reservation_url": "https://beauty.hotpepper.jp/slnH000751219/stylist/T001024056/"
+    },
+    {
+      "name": "山下 みさき",
+      "gender": "女性",
+      "role": "Stylist",
+      "experience": "歴8年",
+      "strength": "似合わせヘアセット、eyeメニューはお任せください",
+      "note": "ヘアセット指名予約はご連絡が必要",
+      "reservation_url": "https://beauty.hotpepper.jp/slnH000751219/stylist/T001097721/"
+    },
+    {
+      "name": "折内 俊拓",
+      "gender": "男性",
+      "role": "Stylist",
+      "experience": "歴6年",
+      "strength": "一緒に透明感あるヘアを作りましょう",
+      "reservation_url": "https://beauty.hotpepper.jp/slnH000751219/stylist/T001026286/"
+    },
+    {
+      "name": "山脇 晃太",
+      "gender": "男性",
+      "role": "Top stylist",
+      "experience": "歴10年",
+      "strength": "何でもお任せ下さい",
+      "reservation_url": "https://beauty.hotpepper.jp/slnH000751219/stylist/T001048172/"
+    },
+    {
+      "name": "指名無し",
+      "gender": "不明",
+      "role": "指名なし",
+      "experience": "",
+      "strength": "担当者を固定しない予約向け",
+      "reservation_url": "https://beauty.hotpepper.jp/slnH000751219/stylist/T001068601/"
+    }
+  ],
+  "stylist_response_rules": [
+    "掲載情報にある範囲だけ案内する",
+    "掲載にない得意分野は作らない",
+    "スタイリストの空き・予約可否を聞かれたら reservation_url を案内する",
+    "ヘアセット指名予約は山下みさきについては連絡が必要と案内する",
+    "女性スタイリストを聞かれた場合は gender=女性 の近藤なつみ・鉄矢絢子・山下みさきのみ案内する",
+    "男性スタイリストは折内俊拓・山脇晃太",
+    "鉄矢絢子はHead stylistと案内する"
+  ]
+}

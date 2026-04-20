@@ -929,10 +929,63 @@ button {
   background: var(--color-offwhite);
 }
 
+/* 横スクロールスライダー */
+.staff__slider-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
 .staff__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  padding-bottom: 8px;
+}
+.staff__grid::-webkit-scrollbar { display: none; }
+
+.staff__nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.staff__nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--color-gold);
+  background: transparent;
+  color: var(--color-gold);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.staff__nav-btn:hover {
+  background: var(--color-gold);
+  color: var(--color-white);
+}
+
+/* スクロールドット */
+.staff__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+.staff__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-border);
+  transition: background 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+.staff__dot--active {
+  background: var(--color-gold);
+  transform: scale(1.3);
 }
 
 /* スタッフカード */
@@ -942,6 +995,8 @@ button {
   overflow: hidden;
   border: 1px solid var(--color-border);
   transition: transform var(--transition), box-shadow var(--transition);
+  flex: 0 0 300px;    /* 横幅固定 */
+  scroll-snap-align: start;
 }
 
 .staff__card:hover {
@@ -1005,6 +1060,90 @@ button {
   color: var(--color-gold);
   padding-top: 12px;
   border-top: 1px solid var(--color-border);
+}
+
+/* スタッフカード内予約ボタン */
+.btn--staff-reserve {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 8px 18px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  background: var(--color-gold);
+  border-radius: 20px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.btn--staff-reserve:hover { opacity: 0.8; }
+
+/* スタイリスト指名予約グリッド */
+.stylist-reserve__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.stylist-reserve__card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--color-white);
+  transition: background 0.2s, transform 0.2s;
+}
+.stylist-reserve__card:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-2px);
+}
+.stylist-reserve__card--nostaff {
+  border-color: rgba(255,255,255,0.06);
+  opacity: 0.7;
+}
+.stylist-reserve__role {
+  font-size: 0.72rem;
+  color: var(--color-gold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.stylist-reserve__name {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+.stylist-reserve__detail {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+  flex: 1;
+}
+.stylist-reserve__btn {
+  margin-top: 10px;
+  font-size: 0.82rem;
+  color: var(--color-gold);
+  font-weight: 600;
+}
+
+.availability__note {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.45);
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .stylist-reserve__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .stylist-reserve__grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* =========================================
@@ -1579,7 +1718,7 @@ button {
   bottom: 104px;
   right: 28px;
   width: 340px;
-  max-height: 520px;
+  max-height: min(520px, calc(100vh - 120px));
   background: var(--color-white);
   border-radius: 12px;
   box-shadow: 0 16px 60px rgba(0, 0, 0, 0.18);
@@ -1800,8 +1939,8 @@ button {
   }
 
   /* Staff */
-  .staff__grid {
-    grid-template-columns: repeat(2, 1fr);
+  .staff__card {
+    flex: 0 0 260px;
   }
 
   /* Contact */
@@ -1857,8 +1996,8 @@ button {
   }
 
   /* Staff */
-  .staff__grid {
-    grid-template-columns: 1fr;
+  .staff__card {
+    flex: 0 0 240px;
   }
 
   /* 予約状況 */
@@ -1890,6 +2029,7 @@ button {
     bottom: 90px;
     width: calc(100vw - 24px);
     max-width: 360px;
+    max-height: min(480px, calc(100vh - 110px));
   }
 
   .chat-fab {

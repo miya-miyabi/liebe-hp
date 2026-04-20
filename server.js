@@ -1,15 +1,16 @@
 /* =========================================
    server.js
-   Liebe Hair Salon — バックエンドサーバー
+   Liebe hair&treatment 高槻 — バックエンドサーバー
    静的ファイル配信 + Claude API プロキシ
 ========================================= */
 
 require('dotenv').config();
-const express = require('express');
+const express  = require('express');
 const Anthropic = require('@anthropic-ai/sdk');
-const path = require('path');
+const path     = require('path');
+const fs       = require('fs');
 
-const app = express();
+const app  = express();
 const PORT = process.env.PORT || 3000;
 
 /* =========================================
@@ -20,57 +21,55 @@ const anthropic = new Anthropic({
 });
 
 /* =========================================
-   Liebeサロンのシステムプロンプト
+   データファイル読み込み
+   回答優先順位:
+     1. 公式掲載情報または実装上で取得できた最新データ
+     2. store_data.json
+     3. coupon_data.json
+     4. stylist_data.json
+     5. faq.json
+     6. 不明 → 定型フレーズ
 ========================================= */
-const SYSTEM_PROMPT = `あなたはLiebe Hair Salon（大阪・高槻）の親切なAIアシスタントです。
-お客様のご質問に、丁寧で自然な日本語でお答えください。
+function loadDataFile(filename) {
+  const filepath = path.join(__dirname, 'data', filename);
+  try {
+    return fs.readFileSync(filepath, 'utf-8');
+  } catch (e) {
+    console.warn(`⚠️  data/${filename} が読み込めませんでした: ${e.message}`);
+    return null;
+  }
+}
 
-【サロン基本情報】
-- サロン名：Liebe Hair Salon（リーベ ヘアサロン）
-- 住所：大阪府高槻市○○町1-2-3
-- 電話：072-000-0000
-- 営業時間：火〜土 10:00〜20:00、日・祝 10:00〜18:00
-- 定休日：月曜日
-- アクセス：JR高槻駅 徒歩5分、阪急高槻市駅 徒歩7分
+function buildSystemPrompt() {
+  // 1. 判断ルール（system_prompt.txt）
+  const basePrompt = loadDataFile('system_prompt.txt') || '';
 
-【メニューと料金（税込）】
-カット
-- カット（ショート〜ミディアム）：¥4,400
-- カット（セミロング〜ロング）：¥5,500
-- 前髪カット：¥1,100
+  // 2〜5. 各 JSON データを結合
+  const storeRaw   = loadDataFile('store_data.json');
+  const couponRaw  = loadDataFile('coupon_data.json');
+  const stylistRaw = loadDataFile('stylist_data.json');
+  const faqRaw     = loadDataFile('faq.json');
 
-カラー
-- ワンカラー（ショート〜ミディアム）：¥6,600
-- ワンカラー（セミロング〜ロング）：¥8,800
-- グレイカラー（白髪染め）：¥7,700〜
-- ハイライト・バレイヤージュ：¥11,000〜
+  const sections = [];
 
-パーマ・縮毛矯正
-- デジタルパーマ（ショート〜ミディアム）：¥13,200〜
-- デジタルパーマ（ロング）：¥17,600〜
-- 縮毛矯正：¥16,500〜
+  if (storeRaw) {
+    sections.push('## 店舗情報 (store_data.json)\n' + storeRaw);
+  }
+  if (couponRaw) {
+    sections.push('## クーポン・料金情報 (coupon_data.json)\n' + couponRaw);
+  }
+  if (stylistRaw) {
+    sections.push('## スタイリスト情報 (stylist_data.json)\n' + stylistRaw);
+  }
+  if (faqRaw) {
+    sections.push('## よくある質問 (faq.json)\n' + faqRaw);
+  }
 
-トリートメント・ヘッドスパ
-- トリートメント（ショート〜ミディアム）：¥3,300〜
-- トリートメント（ロング）：¥4,400〜
-- ヘッドスパ（30分）：¥5,500
-- ヘッドスパ（60分）：¥9,900
+  return [basePrompt, ...sections].join('\n\n---\n\n');
+}
 
-アイブロウ
-- 眉カット・シェービング：¥2,200
-- 眉カラー：¥3,300
-
-【スタッフ】
-- 山田 花子（Head Stylist）：カット・バレイヤージュ得意
-- 田中 美咲（Color Specialist）：カラー・トリートメント得意
-- 鈴木 涼太（Perm Specialist）：縮毛矯正・ヘッドスパ得意
-
-【対応ガイドライン】
-- 返答は簡潔に、3〜5文程度でまとめてください
-- 料金はすべて税込みで案内してください
-- ご予約はホームページのフォームまたはお電話でご案内ください
-- わからないことは正直にお伝えし、電話での確認を勧めてください
-- 絵文字は控えめに使ってOKです`;
+// 起動時に一度組み立て（ファイル変更はサーバー再起動で反映）
+const SYSTEM_PROMPT = buildSystemPrompt();
 
 /* =========================================
    セッション管理（会話履歴を保持）
@@ -122,12 +121,30 @@ app.post('/api/chat', async (req, res) => {
   const recentMessages = session.messages.slice(-20);
 
   try {
-    const response = await anthropic.messages.create({
-      model: 'claude-haiku-4-5-20251001',
-      max_tokens: 600,
-      system: SYSTEM_PROMPT,
-      messages: recentMessages,
-    });
+    let response;
+    let lastError;
+
+    // 500エラーに対して最大3回までリトライ
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      try {
+        response = await anthropic.messages.create({
+          model:      'claude-haiku-4-5-20251001',
+          max_tokens: 600,
+          system:     SYSTEM_PROMPT,
+          messages:   recentMessages,
+        });
+        break; // 成功したらループを抜ける
+      } catch (retryErr) {
+        lastError = retryErr;
+        // 500エラーの場合はリトライ、それ以外は即座にthrow
+        if (retryErr.status === 500 && attempt < 3) {
+          console.warn(`リトライ ${attempt}/3: 500エラー - ${retryErr.message}`);
+          await new Promise(r => setTimeout(r, 1000 * attempt)); // 指数バックオフ
+        } else {
+          throw retryErr;
+        }
+      }
+    }
 
     const reply = response.content[0].text;
 
@@ -137,14 +154,21 @@ app.post('/api/chat', async (req, res) => {
     res.json({ reply });
 
   } catch (err) {
-    console.error('Claude API エラー:', err.message);
+    console.error('Claude API エラー:', {
+      status: err.status,
+      message: err.message,
+      type: err.type,
+      requestId: err.request_id || 'unknown',
+    });
 
-    // API制限やキーエラーの場合はわかりやすいメッセージを返す
     if (err.status === 401) {
       return res.status(500).json({ error: 'APIキーが無効です' });
     }
     if (err.status === 429) {
       return res.status(429).json({ error: 'しばらくしてからお試しください' });
+    }
+    if (err.status === 500) {
+      return res.status(503).json({ error: 'サーバーが一時的に利用できません。しばらくしてからお試しください。' });
     }
 
     res.status(500).json({ error: 'エラーが発生しました。しばらくしてからお試しください。' });

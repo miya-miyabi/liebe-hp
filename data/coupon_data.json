@@ -1,0 +1,165 @@
+{
+  "coupon_notes": [
+    "ロング料金なし",
+    "価格は税込表示",
+    "対象区分は新規・全員などの表記に従う",
+    "男性限定などの条件がある場合は必ず案内する",
+    "クーポン名にRefa・マイクロバブルは含まれない（施術に含まれるサービスであり名称ではない）"
+  ],
+  "coupons": [
+    {
+      "target": "全員",
+      "name": "髪質改善艶カラー+カット+oggiotto1stepTr",
+      "price_jpy": 9500,
+      "categories": ["カット", "カラー", "トリートメント"],
+      "conditions": ["対象スタイリスト: 全員"]
+    },
+    {
+      "target": "全員",
+      "name": "髪質改善艶カラー+oggiotto1stepTr",
+      "price_jpy": 7500,
+      "categories": ["カラー", "トリートメント"],
+      "conditions": ["対象スタイリスト: 全員"]
+    },
+    {
+      "target": "全員",
+      "name": "白髪ぼかしカラー+カット+oggiotto1stepTr",
+      "price_jpy": 9500,
+      "categories": ["カット", "カラー", "トリートメント"],
+      "conditions": ["対象スタイリスト: 全員"]
+    },
+    {
+      "target": "全員",
+      "name": "髪質改善艶カラー+カット+oggiotto6stepTR",
+      "price_jpy": 13500,
+      "categories": ["カット", "カラー", "トリートメント"],
+      "conditions": ["対象スタイリスト: 全員"]
+    },
+    {
+      "target": "全員",
+      "name": "リタッチカラー+oggiotto1stepTR",
+      "price_jpy": 6500,
+      "categories": ["カラー", "トリートメント"],
+      "conditions": ["対象スタイリスト: 全員"]
+    },
+    {
+      "target": "全員",
+      "name": "ブリーチなしダブルカラー+oggiotto1stepTR",
+      "price_jpy": 14500,
+      "categories": ["カラー", "トリートメント"],
+      "conditions": ["対象スタイリスト: 全員"]
+    },
+    {
+      "target": "全員",
+      "name": "インナーケアブリーチ+カラー+oggiTr",
+      "price_jpy": 14500,
+      "categories": ["カラー", "トリートメント"],
+      "conditions": ["対象スタイリスト: 全員"]
+    },
+    {
+      "target": "全員",
+      "name": "全頭ケアブリーチ+カラー+oggi1stepTr",
+      "price_jpy": 16500,
+      "categories": ["カラー", "トリートメント"],
+      "conditions": ["対象スタイリスト: 全員"]
+    },
+    {
+      "target": "全員",
+      "name": "ハイライトケアブリーチ+カラー+oggiTr",
+      "price_jpy": 16500,
+      "categories": ["カラー", "トリートメント"],
+      "conditions": ["対象スタイリスト: 全員"]
+    },
+    {
+      "target": "全員",
+      "name": "髪質改善縮毛矯正+カット+oggiotto1stepTR",
+      "price_jpy": 18500,
+      "categories": ["カット", "縮毛矯正", "トリートメント"],
+      "conditions": ["対象スタイリスト: 全員"]
+    },
+    {
+      "target": "全員",
+      "name": "美髪縮毛矯正+カット+oggi1stepTR",
+      "price_jpy": 16500,
+      "categories": ["カット", "縮毛矯正", "トリートメント"],
+      "conditions": ["対象スタイリスト: 全員"]
+    },
+    {
+      "target": "全員",
+      "name": "前髪縮毛矯正+oggiotto1stepTR",
+      "price_jpy": 7800,
+      "categories": ["縮毛矯正", "トリートメント"],
+      "conditions": ["前髪のみ", "対象スタイリスト: 全員"]
+    },
+    {
+      "target": "全員",
+      "name": "前髪縮毛矯正+カット+oggiotto1stepTR",
+      "price_jpy": 9800,
+      "categories": ["カット", "縮毛矯正", "トリートメント"],
+      "conditions": ["前髪のみ", "対象スタイリスト: 全員"]
+    },
+    {
+      "target": "全員",
+      "name": "美髪縮毛矯正+髪質改善カラー+カット",
+      "price_jpy": 23000,
+      "categories": ["カット", "カラー", "縮毛矯正"],
+      "conditions": ["対象スタイリスト: 全員"]
+    },
+    {
+      "target": "全員",
+      "name": "絹髪髪質改善酸性ストレート+カット",
+      "price_jpy": 26500,
+      "categories": ["カット", "縮毛矯正"],
+      "conditions": ["対象スタイリスト: 全員"]
+    },
+    {
+      "target": "全員",
+      "name": "似合わせカット+oggiotto1stepTR",
+      "price_jpy": 5200,
+      "categories": ["カット", "トリートメント"],
+      "conditions": ["対象スタイリスト: 全員"]
+    },
+    {
+      "target": "全員",
+      "name": "似合わせカット+oggiotto6stepTR",
+      "price_jpy": 8500,
+      "categories": ["カット", "トリートメント"],
+      "conditions": ["対象スタイリスト: 全員"]
+    },
+    {
+      "target": "全員",
+      "name": "カット+超高濃度水素トリートメント",
+      "price_jpy": 13000,
+      "categories": ["カット", "トリートメント"],
+      "conditions": ["対象スタイリスト: 全員"]
+    },
+    {
+      "target": "全員",
+      "name": "メンズカット+炭酸クレンジング",
+      "price_jpy": 5200,
+      "categories": ["カット"],
+      "conditions": ["男性限定", "対象スタイリスト: 全員"]
+    },
+    {
+      "target": "全員",
+      "name": "メンズカット+ブロー",
+      "price_jpy": 4200,
+      "categories": ["カット"],
+      "conditions": ["男性限定", "シャンプーなし", "対象スタイリスト: 全員"]
+    },
+    {
+      "target": "全員",
+      "name": "メンズカット+眉カット",
+      "price_jpy": 6200,
+      "categories": ["カット", "その他"],
+      "conditions": ["男性限定", "対象スタイリスト: 全員"]
+    },
+    {
+      "target": "全員",
+      "name": "メンズパーマ+カット",
+      "price_jpy": 12500,
+      "categories": ["カット", "パーマ"],
+      "conditions": ["男性限定", "対象スタイリスト: 全員"]
+    }
+  ]
+}

@@ -49,16 +49,16 @@
      ウェルカムメッセージ
   ========================================= */
   function showWelcome() {
-    addBotMessage('こんにちは！Liebeへようこそ。');
+    addBotMessage('こんにちは！Liebe hair&treatment 高槻へようこそ。');
 
     setTimeout(() => {
-      addBotMessage('ご予約やメニュー・料金のご案内が可能です。\nお気軽にお聞かせください 😊');
+      addBotMessage('予約・メニュー・料金・アクセスなど、お気軽にご質問ください。');
       showQuickReplies([
         '予約したい',
         '営業時間は？',
         'メニューと料金',
         'アクセスを教えて',
-        'スタッフについて'
+        'スタイリストについて'
       ]);
     }, 600);
   }
@@ -202,7 +202,7 @@
       autoScrollFromReply(reply);
 
       // フォローアップのクイックリプライを表示
-      showQuickReplies(['予約したい', 'メニューと料金', '営業時間は？', 'アクセスを教えて']);
+      showQuickReplies(['予約したい', 'メニューと料金', '縮毛矯正について', 'アクセスを教えて']);
 
     } catch (err) {
       removeTypingIndicator();

@@ -1,0 +1,49 @@
+{
+  "store_name": "Liebe hair&treatment 高槻",
+  "store_name_kana": "リーベ ヘアーアンドトリートメント タカツキ",
+  "brand_copy": "全席個室/女性スタイリスト",
+  "description": "全席完全個室・女性スタイリスト特化型サロン。髪質改善カラー、髪質改善トリートメント、縮毛矯正、酸性ストレート、白髪ぼかし、メンズカット、メンズパーマを案内対象とするヘアサロン。ReFaヴィーナ導入。",
+  "address": "大阪府高槻市紺屋町７－１９ ＩＩＤＡビル２Ｆ",
+  "phone": "072-691-7337",
+  "seats": 5,
+  "private_room": "全席完全個室",
+  "access": {
+    "summary": "JR高槻駅徒歩2分、阪急高槻市駅徒歩4分",
+    "landmark": "高槻センター街（商店街）の中、DAISO 高槻センター街店の目の前のビル2階"
+  },
+  "business_hours": "9:00～21:00",
+  "closed_days": "1月1～4日",
+  "payment_methods": [
+    "Visa",
+    "Mastercard",
+    "JCB",
+    "American Express",
+    "Diners Club",
+    "PayPay",
+    "メルペイ",
+    "QUICPay",
+    "d払い",
+    "楽天Pay"
+  ],
+  "reservation_methods": [
+    "ホットペッパービューティーのネット予約（即時予約OK）",
+    "電話予約"
+  ],
+  "pricing_notes": [
+    "ロング料金なし",
+    "価格は税込表示"
+  ],
+  "response_notes": [
+    "空き状況は予約ページで確認案内する",
+    "予約の確定、変更、キャンセルは公式導線または店舗確認を優先案内する"
+  ],
+  "source_urls": {
+    "top": "https://beauty.hotpepper.jp/slnH000751219/",
+    "coupon": "https://beauty.hotpepper.jp/slnH000751219/coupon/",
+    "stylist": "https://beauty.hotpepper.jp/slnH000751219/stylist/",
+    "style": "https://beauty.hotpepper.jp/slnH000751219/style/",
+    "blog": "https://beauty.hotpepper.jp/slnH000751219/blog/",
+    "map": "https://beauty.hotpepper.jp/slnH000751219/map/",
+    "review": "https://beauty.hotpepper.jp/slnH000751219/review/"
+  }
+}

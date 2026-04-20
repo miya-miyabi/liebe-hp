@@ -332,88 +332,158 @@
           <h2 class="section__title">スタッフ紹介</h2>
         </div>
 
-        <div class="staff__grid">
-          <!-- スタッフ 1 -->
-          <div class="staff__card reveal">
-            <div class="staff__photo">
-              <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=400&q=80&auto=format&fit=crop" alt="山田 花子" loading="lazy" />
-            </div>
-            <div class="staff__info">
-              <p class="staff__role">Head Stylist</p>
-              <h3 class="staff__name">山田 花子</h3>
-              <p class="staff__comment">お客様の「なりたい」を形にするのが私の喜びです。骨格診断を得意とし、一人ひとりに似合うスタイルをご提案します。</p>
-              <p class="staff__specialty">得意メニュー：カット / バレイヤージュ</p>
-            </div>
-          </div>
+        <!-- スクロールナビ -->
+        <div class="staff__nav reveal">
+          <button class="staff__nav-btn" id="staffPrev" aria-label="前へ">&#8592;</button>
+          <button class="staff__nav-btn" id="staffNext" aria-label="次へ">&#8594;</button>
+        </div>
 
-          <!-- スタッフ 2 -->
-          <div class="staff__card reveal delay-1">
-            <div class="staff__photo">
-              <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=400&q=80&auto=format&fit=crop" alt="田中 美咲" loading="lazy" />
-            </div>
-            <div class="staff__info">
-              <p class="staff__role">Color Specialist</p>
-              <h3 class="staff__name">田中 美咲</h3>
-              <p class="staff__comment">カラーリングの繊細な色合いを大切にしています。髪のダメージを最小限に、鮮やかな発色を実現します。</p>
-              <p class="staff__specialty">得意メニュー：カラー / トリートメント</p>
-            </div>
-          </div>
+        <div class="staff__slider-wrap">
+          <div class="staff__grid" id="staffSlider">
 
-          <!-- スタッフ 3 -->
-          <div class="staff__card reveal delay-2">
-            <div class="staff__photo">
-              <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=400&q=80&auto=format&fit=crop" alt="鈴木 涼太" loading="lazy" />
+            <!-- スタッフ 1：鉄矢 絢子 -->
+            <div class="staff__card">
+              <div class="staff__photo">
+                <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=400&q=80&auto=format&fit=crop" alt="鉄矢 絢子" loading="lazy" />
+              </div>
+              <div class="staff__info">
+                <p class="staff__role">Head Stylist</p>
+                <h3 class="staff__name">鉄矢 絢子</h3>
+                <p class="staff__comment">何でもお悩みお伝え下さい。歴8年の経験でお客様一人ひとりに寄り添ったスタイルをご提案します。</p>
+                <p class="staff__specialty">経験年数：8年</p>
+                <a href="https://beauty.hotpepper.jp/slnH000751219/stylist/T001024056/" target="_blank" rel="noopener" class="btn btn--staff-reserve">空き確認・予約</a>
+              </div>
             </div>
-            <div class="staff__info">
-              <p class="staff__role">Perm Specialist</p>
-              <h3 class="staff__name">鈴木 涼太</h3>
-              <p class="staff__comment">縮毛矯正とデジタルパーマを専門にしています。扱いやすくツヤのある仕上がりが得意です。</p>
-              <p class="staff__specialty">得意メニュー：縮毛矯正 / ヘッドスパ</p>
+
+            <!-- スタッフ 2：近藤 なつみ -->
+            <div class="staff__card">
+              <div class="staff__photo">
+                <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=400&q=80&auto=format&fit=crop" alt="近藤 なつみ" loading="lazy" />
+              </div>
+              <div class="staff__info">
+                <p class="staff__role">Top Stylist</p>
+                <h3 class="staff__name">近藤 なつみ</h3>
+                <p class="staff__comment">縮毛矯正が得意です。お客様の髪質に合わせた丁寧な施術で、扱いやすく美しい仕上がりをお届けします。</p>
+                <p class="staff__specialty">得意メニュー：縮毛矯正 / 経験年数：7年</p>
+                <a href="https://beauty.hotpepper.jp/slnH000751219/stylist/T001053560/" target="_blank" rel="noopener" class="btn btn--staff-reserve">空き確認・予約</a>
+              </div>
             </div>
+
+            <!-- スタッフ 3：山下 みさき -->
+            <div class="staff__card">
+              <div class="staff__photo">
+                <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=400&q=80&auto=format&fit=crop" alt="山下 みさき" loading="lazy" />
+              </div>
+              <div class="staff__info">
+                <p class="staff__role">Stylist</p>
+                <h3 class="staff__name">山下 みさき</h3>
+                <p class="staff__comment">似合わせヘアセット、eyeメニューはお任せください。歴8年の経験でお客様の魅力を引き出します。</p>
+                <p class="staff__specialty">得意メニュー：ヘアセット / eyeメニュー / 経験年数：8年</p>
+                <a href="https://beauty.hotpepper.jp/slnH000751219/stylist/T001097721/" target="_blank" rel="noopener" class="btn btn--staff-reserve">空き確認・予約</a>
+              </div>
+            </div>
+
+            <!-- スタッフ 4：折内 俊拓 -->
+            <div class="staff__card">
+              <div class="staff__photo">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80&auto=format&fit=crop" alt="折内 俊拓" loading="lazy" />
+              </div>
+              <div class="staff__info">
+                <p class="staff__role">Stylist</p>
+                <h3 class="staff__name">折内 俊拓</h3>
+                <p class="staff__comment">一緒に透明感あるヘアを作りましょう。お客様の魅力を最大限に引き出す施術を心がけています。</p>
+                <p class="staff__specialty">得意メニュー：カラー / 経験年数：6年</p>
+                <a href="https://beauty.hotpepper.jp/slnH000751219/stylist/T001026286/" target="_blank" rel="noopener" class="btn btn--staff-reserve">空き確認・予約</a>
+              </div>
+            </div>
+
+            <!-- スタッフ 5：山脇 晃太 -->
+            <div class="staff__card">
+              <div class="staff__photo">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80&auto=format&fit=crop" alt="山脇 晃太" loading="lazy" />
+              </div>
+              <div class="staff__info">
+                <p class="staff__role">Top Stylist</p>
+                <h3 class="staff__name">山脇 晃太</h3>
+                <p class="staff__comment">何でもお任せ下さい。歴10年の経験と技術で、お客様の理想のスタイルをご提供します。</p>
+                <p class="staff__specialty">経験年数：10年</p>
+                <a href="https://beauty.hotpepper.jp/slnH000751219/stylist/T001048172/" target="_blank" rel="noopener" class="btn btn--staff-reserve">空き確認・予約</a>
+              </div>
+            </div>
+
           </div>
+        </div>
+
+        <!-- スクロールドット -->
+        <div class="staff__dots" id="staffDots">
+          <span class="staff__dot staff__dot--active"></span>
+          <span class="staff__dot"></span>
+          <span class="staff__dot"></span>
+          <span class="staff__dot"></span>
+          <span class="staff__dot"></span>
         </div>
       </div>
     </section>
 
     <!-- ========================================
-         予約空き状況セクション
+         スタイリスト別予約セクション
     ======================================== -->
     <section class="section availability" id="availability">
       <div class="container">
         <div class="section__header reveal">
-          <p class="section__eyebrow">Availability</p>
-          <h2 class="section__title">予約空き状況</h2>
-          <p class="section__desc">直近1週間の空き状況をご確認いただけます。</p>
+          <p class="section__eyebrow">Reservation</p>
+          <h2 class="section__title">スタイリスト指名予約</h2>
+          <p class="section__desc">ご希望のスタイリストを選んで、最新の空き状況をご確認ください。</p>
         </div>
 
-        <!-- 凡例 -->
-        <div class="availability__legend reveal">
-          <span class="legend legend--open">◯ 空きあり</span>
-          <span class="legend legend--few">△ 残りわずか</span>
-          <span class="legend legend--full">× 満席</span>
+        <!-- スタイリストカード一覧 -->
+        <div class="stylist-reserve__grid reveal">
+
+          <a href="https://beauty.hotpepper.jp/slnH000751219/stylist/T001024056/" target="_blank" rel="noopener" class="stylist-reserve__card">
+            <div class="stylist-reserve__role">Head Stylist</div>
+            <div class="stylist-reserve__name">鉄矢 絢子</div>
+            <div class="stylist-reserve__detail">歴8年｜総合対応</div>
+            <div class="stylist-reserve__btn">空き確認・予約 →</div>
+          </a>
+
+          <a href="https://beauty.hotpepper.jp/slnH000751219/stylist/T001053560/" target="_blank" rel="noopener" class="stylist-reserve__card">
+            <div class="stylist-reserve__role">Top Stylist</div>
+            <div class="stylist-reserve__name">近藤 なつみ</div>
+            <div class="stylist-reserve__detail">歴7年｜縮毛矯正得意</div>
+            <div class="stylist-reserve__btn">空き確認・予約 →</div>
+          </a>
+
+          <a href="https://beauty.hotpepper.jp/slnH000751219/stylist/T001097721/" target="_blank" rel="noopener" class="stylist-reserve__card">
+            <div class="stylist-reserve__role">Stylist</div>
+            <div class="stylist-reserve__name">山下 みさき</div>
+            <div class="stylist-reserve__detail">歴8年｜ヘアセット・eyeメニュー</div>
+            <div class="stylist-reserve__btn">空き確認・予約 →</div>
+          </a>
+
+          <a href="https://beauty.hotpepper.jp/slnH000751219/stylist/T001026286/" target="_blank" rel="noopener" class="stylist-reserve__card">
+            <div class="stylist-reserve__role">Stylist</div>
+            <div class="stylist-reserve__name">折内 俊拓</div>
+            <div class="stylist-reserve__detail">歴6年｜透明感カラー</div>
+            <div class="stylist-reserve__btn">空き確認・予約 →</div>
+          </a>
+
+          <a href="https://beauty.hotpepper.jp/slnH000751219/stylist/T001048172/" target="_blank" rel="noopener" class="stylist-reserve__card">
+            <div class="stylist-reserve__role">Top Stylist</div>
+            <div class="stylist-reserve__name">山脇 晃太</div>
+            <div class="stylist-reserve__detail">歴10年｜総合対応</div>
+            <div class="stylist-reserve__btn">空き確認・予約 →</div>
+          </a>
+
+          <a href="https://beauty.hotpepper.jp/slnH000751219/stylist/T001068601/" target="_blank" rel="noopener" class="stylist-reserve__card stylist-reserve__card--nostaff">
+            <div class="stylist-reserve__role">指名なし</div>
+            <div class="stylist-reserve__name">指名なし</div>
+            <div class="stylist-reserve__detail">担当者を固定しない方はこちら</div>
+            <div class="stylist-reserve__btn">空き確認・予約 →</div>
+          </a>
+
         </div>
 
-        <!-- カレンダーテーブル -->
-        <div class="availability__wrapper reveal">
-          <div class="availability__scroll">
-            <table class="availability__table" id="availabilityTable">
-              <thead>
-                <tr>
-                  <th class="time-col">時間</th>
-                  <!-- 曜日はJavaScriptで動的生成 -->
-                </tr>
-              </thead>
-              <tbody>
-                <!-- 時間帯はJavaScriptで動的生成 -->
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div class="availability__cta reveal">
-          <p>ご希望の日時をお選びのうえ、下のフォームからご予約ください。</p>
-          <a href="#contact" class="btn btn--primary">予約フォームへ</a>
-        </div>
+        <p class="availability__note reveal">※ 空き状況はホットペッパービューティーのリアルタイム情報です。</p>
       </div>
     </section>
 
@@ -467,7 +537,7 @@
               </div>
               <p class="review__text">
                 カラーとトリートメントをお願いしました。発色がとても綺麗で、
-                しかも髪が傷んでいない！田中さんのカラーはリピ確定です。
+                しかも髪が傷んでいない！このサロンのカラーはリピ確定です。
                 サロン全体の雰囲気も落ち着いていて居心地が良かったです。
               </p>
               <p class="review__date">2024年10月</p>
@@ -484,7 +554,7 @@
               </div>
               <p class="review__text">
                 ヘッドスパが最高でした。日ごろの疲れが一気に取れた感じ。
-                鈴木さんの手技がとても気持ちよく、気づいたら寝てしまっていました（笑）。
+                スタッフの手技がとても気持ちよく、気づいたら寝てしまっていました（笑）。
                 髪もツヤツヤになって大満足です。
               </p>
               <p class="review__date">2024年10月</p>
@@ -516,7 +586,7 @@
                 </div>
               </div>
               <p class="review__text">
-                眉スタイリングを初めてお願いしました。山田さんがとても丁寧に
+                eyeメニューを初めてお願いしました。山下さんがとても丁寧に
                 アドバイスしてくださり、顔全体の印象がガラッと変わりました。
                 毎月通いたいと思います！
               </p>
