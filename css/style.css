@@ -849,6 +849,53 @@ button {
   transform: translateY(0);
 }
 
+/* クーポン価格ラベル */
+.menu__price {
+  font-size: 0.82rem;
+  color: var(--color-gold);
+  font-weight: 600;
+  margin-top: 6px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease 0.05s, transform 0.35s ease 0.05s;
+}
+
+.menu__card:hover .menu__price {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 「クーポンを見る →」ラベル */
+.menu__link-label {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 2px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease 0.1s, transform 0.35s ease 0.1s;
+}
+
+.menu__card:hover .menu__link-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 注記テキスト */
+.menu__note {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--color-text-muted, #888);
+  margin-top: 16px;
+}
+
+.menu__note a {
+  color: var(--color-gold);
+  text-decoration: underline;
+}
+
 /* 旧スタイルの互換残骸（使用しない） */
 .menu__icon-legacy {
   display: none;
