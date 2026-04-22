@@ -183,11 +183,16 @@ app.get('*', (req, res) => {
 });
 
 /* =========================================
-   サーバー起動
+   サーバー起動（ローカル開発時のみ listen）
+   Vercel サーバーレスでは module.exports を使用
 ========================================= */
-app.listen(PORT, () => {
-  console.log(`✅ サーバー起動: http://localhost:${PORT}`);
-  if (!process.env.ANTHROPIC_API_KEY) {
-    console.warn('⚠️  ANTHROPIC_API_KEY が設定されていません。.env ファイルを確認してください。');
-  }
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`✅ サーバー起動: http://localhost:${PORT}`);
+    if (!process.env.ANTHROPIC_API_KEY) {
+      console.warn('⚠️  ANTHROPIC_API_KEY が設定されていません。.env ファイルを確認してください。');
+    }
+  });
+}
+
+module.exports = app;
