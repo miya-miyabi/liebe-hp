@@ -19,9 +19,11 @@
   if (!fab || !chatWindow) return;
 
   /* =========================================
-     セッション ID（タブをまたいで会話履歴を保持）
+     会話履歴（フロント側で保持）
+     サーバーレス環境ではサーバー側でセッションを
+     保持できないため、フロントから毎回送信する
   ========================================= */
-  const sessionId = 'session_' + Math.random().toString(36).slice(2, 10);
+  const conversationHistory = [];
 
   /* =========================================
      チャット開閉
@@ -183,7 +185,10 @@
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: input, sessionId }),
+        body: JSON.stringify({
+          message: input,
+          messages: conversationHistory.slice(), // 会話履歴を送信
+        }),
       });
 
       removeTypingIndicator();
@@ -198,6 +203,10 @@
       const data = await res.json();
       const reply = data.reply || 'しばらくしてからお試しください。';
 
+      // 会話履歴を更新
+      conversationHistory.push({ role: 'user', content: input });
+      conversationHistory.push({ role: 'assistant', content: reply });
+
       addBotMessage(reply);
       autoScrollFromReply(reply);
 
@@ -206,7 +215,7 @@
 
     } catch (err) {
       removeTypingIndicator();
-      addBotMessage('通信エラーが発生しました。\nお電話（072-000-0000）でもご対応いたします。');
+      addBotMessage('通信エラーが発生しました。\nお電話（072-691-7337）でもご対応いたします。');
       showQuickReplies(['もう一度試す', '電話番号を教えて']);
     } finally {
       isLoading = false;
