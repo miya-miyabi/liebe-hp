@@ -861,65 +861,71 @@ button {
   background: var(--color-white);
 }
 
-.price__tables {
+/* クーポングリッド */
+.coupon__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 8px;
 }
 
-/* 料金テーブルブロック */
-.price__table {
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.price__category {
-  font-family: var(--font-serif);
-  font-size: 0.85rem;
-  letter-spacing: 0.2em;
-  color: var(--color-white);
-  background: var(--color-navy);
-  padding: 14px 20px;
-  text-transform: uppercase;
-}
-
-.price__table table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.price__table td {
-  padding: 14px 20px;
-  font-size: 0.88rem;
-  border-bottom: 1px solid var(--color-border);
-  vertical-align: middle;
-}
-
-.price__table tr:last-child td {
-  border-bottom: none;
-}
-
-.price__table tr:nth-child(even) {
+.coupon__card {
   background: var(--color-offwhite);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-/* 金額セル */
-.price__amount {
-  text-align: right;
-  font-weight: 500;
+.coupon__category {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.coupon__name {
+  font-size: 0.9rem;
   color: var(--color-navy);
-  white-space: nowrap;
-  min-width: 100px;
+  line-height: 1.6;
+  flex: 1;
 }
 
-/* 注記 */
-.price__note {
-  margin-top: 32px;
-  font-size: 0.82rem;
-  color: var(--color-text-muted);
-  line-height: 2;
+.coupon__price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-top: 4px;
+}
+
+.coupon__card--cta {
+  background: var(--color-navy);
+  border-color: var(--color-navy);
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  gap: 16px;
+}
+
+.coupon__more {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .coupon__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .coupon__grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* =========================================
